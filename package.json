@@ -8,12 +8,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run typegen && rollup -c",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false --strict",
-    "typegen": "tsc --outFile dist/weatherbot-dev-plotter.ts"
+    "typegen": "tsc --outFile dist/weatherbot-dev-plotter.ts",
+    "fix-cors": "cors-backdoor --target http://127.0.0.1:8000"
   },
   "author": "",
   "license": "MIT & Apache 2.0",
   "dependencies": {
-    "chart.js": "^4.3.0"
+    "chart.js": "^4.3.0",
+    "ts-results": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
@@ -24,6 +26,7 @@
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-replace": "^5.0.2",
     "@types/chart.js": "^2.9.37",
+    "cors-backdoor": "^1.0.6",
     "rimraf": "^5.0.1",
     "rollup": "^3.22.0",
     "rollup-plugin-filesize": "^10.0.0",

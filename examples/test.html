@@ -8,15 +8,42 @@
         <script type="text/javascript" src="../dist/weatherbot-dev-plotter.cjs.js"></script>
         <script type="text/javascript">
             window.onload=function() {
-                console.log(exports);
-                exports.testFunc();
+                exports.mainApp(
+                    document.getElementById("reset-btn"),
+                    document.getElementById("moving-avg-len"),
+                    document.getElementById("moving-avg-txt"),
+                    document.getElementById("temp-canvas"),
+                    document.getElementById("pressure-canvas"),
+                    document.getElementById("humidity-canvas"),
+                    document.getElementById("light-canvas"),
+                    document.getElementById("wind-speed-canvas"),
+                );
             }
         </script>
         
     </head>
     <body>
-        <div style="height: 500px">
-            <canvas id="chart-canvas"></canvas>
+        <div>
+            <button id="reset-btn" type="button">Erase Stored Data</button>
+            <input id="moving-avg-len" type="range" min="1" max="101" step="2" value=11"/>
+            <p id="moving-avg-txt">11</p>
         </div>
+        <div style="height: 500px">
+            <canvas id="temp-canvas"></canvas>
+        </div>
+        <div style="height: 500px">
+            <canvas id="pressure-canvas"></canvas>
+        </div>
+        <div style="height: 500px">
+            <canvas id="humidity-canvas"></canvas>
+        </div>
+        <div style="height: 500px">
+            <canvas id="light-canvas"></canvas>
+        </div>
+        <div style="height: 500px">
+            <canvas id="wind-speed-canvas"></canvas>
+        </div>
+
+
     </body>
 </html>
