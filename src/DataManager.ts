@@ -202,8 +202,10 @@ export class DataPacket {
     }
 }
 
+export let corsURL = "http://localhost:1234";
+
 export let requestData = async (): Promise<Result<DataPacket, DataGetError>> => {
-    return fetch("http://localhost:1234")
+    return fetch(corsURL)
         .then(res => res.json())
         .then(jsonObj => DataPacket.fromJSON(jsonObj))
         .catch(error => Err(DataGetError.NetworkError))
