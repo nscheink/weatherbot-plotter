@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            let exports={};
+            console.log("test2");
+        </script>
+
+        <script type="text/javascript" src="../dist/weatherbot-dev-plotter.cjs.js"></script>
+        <script type="text/javascript">
+            window.onload=function() {
+                console.log(exports);
+                exports.testFunc();
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div style="height: 500px">
+            <canvas id="chart-canvas"></canvas>
+        </div>
+    </body>
+</html>
